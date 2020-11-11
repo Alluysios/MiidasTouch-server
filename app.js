@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
 const cors = require('cors')
 const helmet = require('helmet')
 const xss = require('xss-clean');
@@ -13,8 +12,6 @@ const hpp = require('hpp');
 const productRouter = require('./routes/productRoutes');
 const authRouter = require('./routes/authRoutes');
 const userRouter = require('./routes/userRoutes');
-
-if(process.env.NODE_ENV==='development') app.use(morgan('dev'));
 
 app.use(compression());
 app.use(cors());
